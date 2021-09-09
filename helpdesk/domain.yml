@@ -1,0 +1,128 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- request_Reimbursement:
+    use_entities: []
+- chitchat:
+    use_entities: true
+- stop:
+    use_entities: true
+- affirm:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- thanks:
+    use_entities: true
+- team_name:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- deny:
+    use_entities: true
+- inform:
+    use_entities: true
+entities:
+- number_people
+- number_days
+- number_charge
+- feedback
+slots:
+  number_people:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  number_days:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  feedback:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  number_charge:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey!
+  utter_goodbye:
+  - text: Bye
+  - text: Good Bye
+  utter_welcome:
+  - text: Welcome
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_restart:
+  - text: restarted
+  utter_default:
+  - text: Sorry, I didn't understand you, please try input something else
+  utter_chitchat:
+  - text: chitchat
+  utter_ask_continue:
+  - text: Do you want to continue
+  utter_num_people:
+  - text: How many people?
+  utter_num_days:
+  - text: How many days?
+  utter_charge:
+  - text: How much charge?
+  utter_slot_values:
+  - text: |-
+      I am filling reimbursement form using the following parameters:
+       - people: {number_people}
+       - days: {number_days}
+       - charge: {number_charge}
+       - feedback: {feedback}
+  utter_wrong_num_days:
+  - text: Number of date should be positive integer, please try again
+  utter_wrong_num_people:
+  - text: Number of people should be a positive integer, please try again
+  utter_wrong_charge:
+  - text: Charge shoudl be positive integer, please try again
+  utter_submit:
+  - text: All done
+actions:
+- validate_reimbursement_form
+forms:
+  reimbursement_form:
+    required_slots:
+      feedback:
+      - entity: feedback
+        type: from_entity
+      - type: from_text
+      number_charge:
+      - entity: number_charge
+        intent:
+        - inform
+        - request_Reimbursement
+        type: from_entity
+      number_days:
+      - entity: number_days
+        intent:
+        - inform
+        - request_Reimbursement
+        type: from_entity
+      number_people:
+      - entity: number_people
+        intent:
+        - inform
+        - request_Reimbursement
+        type: from_entity
+e2e_actions: []
