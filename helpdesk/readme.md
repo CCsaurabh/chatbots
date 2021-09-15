@@ -1,4 +1,4 @@
-**Helpdesk bot with data retrival from different database as per the query of the user.**
+**Helpdesk bot with data retrival from different database as per the query of the user and can connect to telegram bot for the result**
 
 
 File Structure:
@@ -9,3 +9,5 @@ Data:
   - rules.yml : Rule for execution
 Actions:
   - action.py : Used to do modular tasks like retriving data from database or other api, filling forms
+ Models:
+  - models : Containe model files after training
