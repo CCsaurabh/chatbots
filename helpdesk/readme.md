@@ -10,7 +10,7 @@ Data:
 Actions:
   - action.py : Used to do modular tasks like retriving data from database or other api, filling forms
  Models:
-  - models : Containe model files after training
+  - models : Containes model files after training
 
 
 **Connecting to Telegram Bot :**
