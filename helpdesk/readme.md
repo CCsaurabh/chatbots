@@ -1,12 +1,11 @@
 **Helpdesk bot with data retrival from different database as per the query of the user and can connect to telegram bot for the result**
 
-
 **File Structure:**
 
 Data:
   - nly.yml : Contains data for intent classfication.
   - stories.yml : Contains stories so as to make action according to it
-  - rules.yml : Rule for execution
+  - rules.yml : Rule for execution as per the intents
 Actions:
   - action.py : Used to do modular tasks like retriving data from database or other api, filling forms
  Models:
