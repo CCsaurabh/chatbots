@@ -15,3 +15,5 @@ Actions:
 **Connecting to Telegram Bot :**
  We need to modify the credential file and provide the details as per the bot features.
  More details can be found [here](https://rasa.com/docs/rasa/connectors/telegram/).
+
+Here is the link to make bot using [telegram](https://core.telegram.org/bots).
