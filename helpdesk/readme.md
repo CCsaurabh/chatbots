@@ -8,8 +8,10 @@ Data:
   - rules.yml : Rule for execution as per the intents
 Actions:
   - action.py : Used to do modular tasks like retriving data from database or other api, filling forms
- Models:
+Models:
   - models : Containes model files after training
+endpoints.yml : contains the webhook configuration for the custom actions
+ 
 
 
 **Connecting to Telegram Bot :**
