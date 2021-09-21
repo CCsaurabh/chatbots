@@ -17,3 +17,5 @@
  More details can be found [here](https://rasa.com/docs/rasa/connectors/telegram/).
 
 Here is the link to make bot using [telegram](https://core.telegram.org/bots).
+
+One need to add the details about bot in the credentials.yml file
